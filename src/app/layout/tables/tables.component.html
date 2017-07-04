@@ -1,0 +1,54 @@
+<app-page-header [heading]="'Tabla de Socios'" [icon]="'fa-table'"></app-page-header>
+<div class="row">
+    <div class="col col-xs-4 col-lg-4">
+
+        <div class="card mb-3 list-group">
+            <div class="card-header">Disciplina</div>
+            <ul>
+                <li>Fútbol</li>
+                <li>Patín</li>
+                <li>Gimnasia</li>
+                <li>Baile</li>
+            </ul>
+        </div>
+        <div class="card mb-3 list-group">
+            <div class="card-header">Tipo Socio</div>
+            <ul>
+                <li>Hombre</li>
+                <li>Femenino</li>
+                <li>Vitalicio</li>
+                <li>Menor</li>
+            </ul>
+        </div>
+    </div>
+    <div class="col col-xs-8 col-lg-8">
+        <div class="card mb-3">
+            <div class="card-header">Socios 
+            >
+            </div>
+            <table class="card-block table table-hover">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Socio</th>
+                        <th>Fecha de Alta</th>  
+                        <th>Estado</th>
+                        <th>Email</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- <tr *ngFor="let socio of socios | sociofilter:filter | slice:(page-1)*limit:page*limit"> -->
+                    <tr *ngFor="let socio of socios">
+                        <td scope="row">{{socio.id}}</td>
+                        <td>{{socio.nombre}}</td>
+                        <td>{{socio.fecha}}</td>
+                        <td>{{socio.estado}}</td>
+                        <td>{{socio.email}}</td>
+                        <td><button type="button" class="btn btn-outline-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button> | <button type="button" class="btn btn-outline-primary btn-sm"><i class="fa fa-times" aria-hidden="true"></i></button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
